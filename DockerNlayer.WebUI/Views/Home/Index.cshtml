@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CategoryDTO>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a class="btn btn-info" asp-action="CategoryAdd">Category Add</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <th scope="row">@category.id</th>
+                <td>@category.Name</td>
+                <td>@category.Description</td>
+                <td>
+                    <a class="btn btn-info btn-sm">Edit</a>
+                    <a class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
